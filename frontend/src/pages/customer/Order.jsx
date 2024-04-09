@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import ProductItem from '@/components/ProductItem';
 import { getOrder } from '@/utilities/api/OrderAPIHandlers';
+import ProductItem from '@/components/ProductItem';
 
 const Order = () => {
   const [order, setOrder] = useState({});

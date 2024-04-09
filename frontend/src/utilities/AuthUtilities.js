@@ -1,4 +1,4 @@
-const localStorageUserItemName = 'ecommerce-demo-user';
+const localStorageUserItemName = 'ecommerce-user';
 
 // Function to save user details in local storage
 export const saveUserDetails = (user) => {

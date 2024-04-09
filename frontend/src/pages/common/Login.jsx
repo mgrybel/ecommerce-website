@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { getUserDetails, saveUserDetails } from '@/utilities/AuthUtilities';
 import { AuthContext } from '@/contexts/AuthContext';
 import { logIn } from '@/utilities/api/AuthAPIHandlers';
+import { getUserDetails, saveUserDetails } from '@/utilities/AuthUtilities';
 
 const Login = () => {
   const currentUser = getUserDetails();

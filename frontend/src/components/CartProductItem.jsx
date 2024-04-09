@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaTrashAlt } from 'react-icons/fa';
-import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa6';
+import { FaPlus } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
 import {

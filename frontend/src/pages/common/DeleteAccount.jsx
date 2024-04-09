@@ -2,8 +2,8 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { removeUserDetails } from '@/utilities/AuthUtilities';
 import { AuthContext } from '@/contexts/AuthContext';
+import { removeUserDetails } from '@/utilities/AuthUtilities';
 import { deleteUser } from '@/utilities/api/UserAPIHandlers';
 
 const DeleteAccount = () => {

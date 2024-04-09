@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import CartProductItem from '@/components/CartProductItem';
 import { clearCart, getCart } from '@/utilities/api/CartAPIHandlers';
+import CartProductItem from '@/components/CartProductItem';
 
 const Cart = () => {
   const [cart, setCart] = useState(null);

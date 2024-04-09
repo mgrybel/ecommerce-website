@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import ProductCard from '@/components/ProductCard';
 import { getAllProducts } from '@/utilities/api/ProductAPIHandlers';
+import ProductCard from '@/components/ProductCard';
 
 const AdminHome = () => {
   const [products, setProducts] = useState([]);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import OrdersOrderItem from '@/components/OrdersOrderItem';
 import { getAllOrders } from '@/utilities/api/OrderAPIHandlers';
+import OrdersOrderItem from '@/components/OrdersOrderItem';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);

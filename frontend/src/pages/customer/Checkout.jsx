@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import ProductItem from '@/components/ProductItem';
 import { createOrder } from '@/utilities/api/OrderAPIHandlers';
 import { getCart } from '@/utilities/api/CartAPIHandlers';
+import ProductItem from '@/components/ProductItem';
 
 const Checkout = () => {
   const [cart, setCart] = useState([]);

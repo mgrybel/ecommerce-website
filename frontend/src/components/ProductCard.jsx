@@ -11,9 +11,11 @@ const ProductCard = ({ pid, imageUrl, name, price }) => {
     <div className='p-2'>
       <Link
         to={
-          currentUser.role == 'ADMIN'
-            ? `/editProduct/${pid}`
-            : `/product/${pid}`
+          currentUser == null
+            ? '/login'
+            : currentUser.role == 'ADMIN'
+              ? `/editProduct/${pid}`
+              : `/product/${pid}`
         }
         className='text-decoration-none'
       >
@@ -28,9 +30,11 @@ const ProductCard = ({ pid, imageUrl, name, price }) => {
           />
           <div className='card-body'>
             <div className='d-flex justify-content-between align-items-center'>
-              <button type='button' className='btn btn-primary'>
-                {currentUser.role == 'ADMIN' ? 'Edit' : 'View'}
-              </button>
+              {currentUser && (
+                <button type='button' className='btn btn-primary'>
+                  {currentUser.role == 'ADMIN' ? 'Edit' : 'View'}
+                </button>
+              )}
               <h4 className='text-primary me-2'>€{price}</h4>
             </div>
           </div>

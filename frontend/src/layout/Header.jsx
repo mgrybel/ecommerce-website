@@ -41,13 +41,15 @@ const Header = () => {
                   </button>
                 </NavLink>
               </li>
-              <li>
-                <NavLink to='/products'>
-                  <button type='button' className='btn btn-primary'>
-                    Products
-                  </button>
-                </NavLink>
-              </li>
+              {currentUser && (
+                <li>
+                  <NavLink to='/products'>
+                    <button type='button' className='btn btn-primary'>
+                      Products
+                    </button>
+                  </NavLink>
+                </li>
+              )}
             </ul>
           </div>
 

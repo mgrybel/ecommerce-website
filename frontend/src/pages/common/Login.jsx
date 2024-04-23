@@ -91,6 +91,17 @@ const Login = () => {
                 </button>
               </div>
             </form>
+            <div className='d-flex justify-content-center'>
+              <p className='mt-3 text-right text-muted'>
+                Don&apos;t have an account?{' '}
+                <a
+                  href='/register'
+                  className='font-weight-bold text-primary text-decoration-none'
+                >
+                  Register
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>

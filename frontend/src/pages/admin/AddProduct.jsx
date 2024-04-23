@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import { addProduct } from '@/utilities/api/ProductAPIHandlers';
 
@@ -47,95 +48,100 @@ const AddProduct = () => {
   };
 
   return (
-    <section className='container'>
-      <div className='row py-lg-5'>
-        <div className='col-lg-6 col-md-8 mx-auto'>
-          <h1 className='text-center pb-3'>Add Product</h1>
-          <form>
-            <fieldset>
-              <div className='row pb-2'>
-                <label htmlFor='name' className='col-sm-2 col-form-label'>
-                  Name
-                </label>
-                <div className='col-sm-10 border border-secondary'>
-                  <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    className='form-control-plaintext'
-                  />
+    <>
+      <Helmet>
+        <title>Add Product</title>
+      </Helmet>
+      <section className='container'>
+        <div className='row py-lg-5'>
+          <div className='col-lg-6 col-md-8 mx-auto'>
+            <h1 className='text-center pb-3'>Add Product</h1>
+            <form>
+              <fieldset>
+                <div className='row pb-2'>
+                  <label htmlFor='name' className='col-sm-2 col-form-label'>
+                    Name
+                  </label>
+                  <div className='col-sm-10 border border-secondary'>
+                    <input
+                      type='text'
+                      id='name'
+                      name='name'
+                      className='form-control-plaintext'
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className='row pb-2'>
-                <label
-                  htmlFor='description'
-                  className='col-sm-2 col-form-label'
+                <div className='row pb-2'>
+                  <label
+                    htmlFor='description'
+                    className='col-sm-2 col-form-label'
+                  >
+                    Description
+                  </label>
+                  <div className='col-sm-10 border border-secondary'>
+                    <textarea
+                      type='text'
+                      rows={4}
+                      id='description'
+                      name='description'
+                      className='form-control-plaintext'
+                    />
+                  </div>
+                </div>
+                <div className='row pb-2'>
+                  <label htmlFor='price' className='col-sm-2 col-form-label'>
+                    Price
+                  </label>
+                  <div className='col-sm-10 border border-secondary'>
+                    <input
+                      type='price'
+                      id='price'
+                      name='price'
+                      className='form-control-plaintext'
+                    />
+                  </div>
+                </div>
+                <div className='row pb-2'>
+                  <label htmlFor='imageUrl' className='col-sm-2 col-form-label'>
+                    Image URL
+                  </label>
+                  <div className='col-sm-10 border border-secondary'>
+                    <input
+                      type='text'
+                      id='imageUrl'
+                      name='imageUrl'
+                      className='form-control-plaintext'
+                    />
+                  </div>
+                </div>
+                <div className='row pb-3'>
+                  <label htmlFor='stock' className='col-sm-2 col-form-label'>
+                    Stock
+                  </label>
+                  <div className='col-sm-10 border border-secondary'>
+                    <input
+                      type='stock'
+                      id='stock'
+                      name='stock'
+                      className='form-control-plaintext'
+                    />
+                  </div>
+                </div>
+              </fieldset>
+              <div className='text-center'>
+                <button
+                  type='button'
+                  className='btn btn-success me-2'
+                  onClick={handleAddProduct}
                 >
-                  Description
-                </label>
-                <div className='col-sm-10 border border-secondary'>
-                  <textarea
-                    type='text'
-                    rows={4}
-                    id='description'
-                    name='description'
-                    className='form-control-plaintext'
-                  />
-                </div>
+                  Add Product
+                </button>
               </div>
-              <div className='row pb-2'>
-                <label htmlFor='price' className='col-sm-2 col-form-label'>
-                  Price
-                </label>
-                <div className='col-sm-10 border border-secondary'>
-                  <input
-                    type='price'
-                    id='price'
-                    name='price'
-                    className='form-control-plaintext'
-                  />
-                </div>
-              </div>
-              <div className='row pb-2'>
-                <label htmlFor='imageUrl' className='col-sm-2 col-form-label'>
-                  Image URL
-                </label>
-                <div className='col-sm-10 border border-secondary'>
-                  <input
-                    type='text'
-                    id='imageUrl'
-                    name='imageUrl'
-                    className='form-control-plaintext'
-                  />
-                </div>
-              </div>
-              <div className='row pb-3'>
-                <label htmlFor='stock' className='col-sm-2 col-form-label'>
-                  Stock
-                </label>
-                <div className='col-sm-10 border border-secondary'>
-                  <input
-                    type='stock'
-                    id='stock'
-                    name='stock'
-                    className='form-control-plaintext'
-                  />
-                </div>
-              </div>
-            </fieldset>
-            <div className='text-center'>
-              <button
-                type='button'
-                className='btn btn-success me-2'
-                onClick={handleAddProduct}
-              >
-                Add Product
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

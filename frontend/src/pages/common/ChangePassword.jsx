@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import { updateUser } from '@/utilities/api/UserAPIHandlers';
 
@@ -31,57 +32,62 @@ const ChangePassword = () => {
   };
 
   return (
-    <section className='container'>
-      <div className='row py-lg-5'>
-        <div className='col-lg-6 col-md-8 mx-auto'>
-          <h1 className='text-center pb-3'>Change Password</h1>
-          <p className='text-danger text-center'>{error}</p>
-          <form>
-            <fieldset>
-              <div>
-                <label htmlFor='password' className='form-label mt-4'>
-                  New Password
-                </label>
-                <div className='border border-secondary'>
-                  <input
-                    type='password'
-                    id='password'
-                    name='password'
-                    className='form-control'
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
+    <>
+      <Helmet>
+        <title>Change Password</title>
+      </Helmet>
+      <section className='container'>
+        <div className='row py-lg-5'>
+          <div className='col-lg-6 col-md-8 mx-auto'>
+            <h1 className='text-center pb-3'>Change Password</h1>
+            <p className='text-danger text-center'>{error}</p>
+            <form>
+              <fieldset>
+                <div>
+                  <label htmlFor='password' className='form-label mt-4'>
+                    New Password
+                  </label>
+                  <div className='border border-secondary'>
+                    <input
+                      type='password'
+                      id='password'
+                      name='password'
+                      className='form-control'
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label htmlFor='confirmPassword' className='form-label mt-4'>
-                  Confirm New Password
-                </label>
-                <div className='border border-secondary'>
-                  <input
-                    type='password'
-                    id='confirmPassword'
-                    name='confirmPassword'
-                    className='form-control'
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
+                <div>
+                  <label htmlFor='confirmPassword' className='form-label mt-4'>
+                    Confirm New Password
+                  </label>
+                  <div className='border border-secondary'>
+                    <input
+                      type='password'
+                      id='confirmPassword'
+                      name='confirmPassword'
+                      className='form-control'
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+                  </div>
                 </div>
+              </fieldset>
+              <div className='text-center'>
+                <button
+                  type='button'
+                  className='btn btn-success mt-3'
+                  onClick={(e) => handleChangePassword(e)}
+                >
+                  Change Password
+                </button>
               </div>
-            </fieldset>
-            <div className='text-center'>
-              <button
-                type='button'
-                className='btn btn-success mt-3'
-                onClick={(e) => handleChangePassword(e)}
-              >
-                Change Password
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

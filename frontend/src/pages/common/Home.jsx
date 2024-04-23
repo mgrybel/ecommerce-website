@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import { getAllProducts } from '@/utilities/api/ProductAPIHandlers';
 import ProductCard from '@/components/ProductCard';
@@ -16,7 +17,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <section className='text-center container'>
         <div className='row py-lg-5'>
           <div className='col-lg-6 col-md-8 mx-auto'>
@@ -37,7 +41,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

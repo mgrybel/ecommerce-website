@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 import { AuthContext } from '@/contexts/AuthContext';
 import { removeUserDetails } from '@/utilities/AuthUtilities';
@@ -30,26 +31,31 @@ const DeleteAccount = () => {
   };
 
   return (
-    <section className='container'>
-      <div className='row py-lg-5'>
-        <div className='col-lg-6 col-md-8 mx-auto'>
-          <h1 className='text-center pb-3'>Delete Account</h1>
-          <p className='text-danger text-center'>{error}</p>
-          <div className='alert alert-dismissible alert-danger'>
-            <div className='text-center'>
-              <p>Are you sure you want to delete your account?</p>
-              <button
-                type='button'
-                className='btn btn-danger'
-                onClick={(e) => handleDeleteAccount(e)}
-              >
-                Delete Account
-              </button>
+    <>
+      <Helmet>
+        <title>Delete Account</title>
+      </Helmet>
+      <section className='container'>
+        <div className='row py-lg-5'>
+          <div className='col-lg-6 col-md-8 mx-auto'>
+            <h1 className='text-center pb-3'>Delete Account</h1>
+            <p className='text-danger text-center'>{error}</p>
+            <div className='alert alert-dismissible alert-danger'>
+              <div className='text-center'>
+                <p>Are you sure you want to delete your account?</p>
+                <button
+                  type='button'
+                  className='btn btn-danger'
+                  onClick={(e) => handleDeleteAccount(e)}
+                >
+                  Delete Account
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

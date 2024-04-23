@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 import { getAllOrders } from '@/utilities/api/OrderAPIHandlers';
 import OrdersOrderItem from '@/components/OrdersOrderItem';
@@ -21,22 +22,27 @@ const Orders = () => {
   }, []);
 
   return (
-    <section className='container'>
-      <div className='row py-lg-5'>
-        <div className='mx-auto'>
-          <h1 className='text-center pb-3 pt-md-0 pt-sm-5'>Orders</h1>
-          <section className='container'>
-            <div className='row py-lg-3'>
-              <div className='col-lg-7 col-md-8 mx-auto'>
-                {orders.map((order, index) => (
-                  <OrdersOrderItem key={index} order={order} />
-                ))}
+    <>
+      <Helmet>
+        <title>Orders</title>
+      </Helmet>
+      <section className='container'>
+        <div className='row py-lg-5'>
+          <div className='mx-auto'>
+            <h1 className='text-center pb-3 pt-md-0 pt-sm-5'>Orders</h1>
+            <section className='container'>
+              <div className='row py-lg-3'>
+                <div className='col-lg-7 col-md-8 mx-auto'>
+                  {orders.map((order, index) => (
+                    <OrdersOrderItem key={index} order={order} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

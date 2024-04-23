@@ -154,6 +154,17 @@ const Register = () => {
                 </button>
               </div>
             </form>
+            <div className='d-flex justify-content-center'>
+              <p className='mt-3 text-right text-muted'>
+                Already have an account?{' '}
+                <a
+                  href='/login'
+                  className='font-weight-bold text-primary text-decoration-none'
+                >
+                  Sign in
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </section>

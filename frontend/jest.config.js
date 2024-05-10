@@ -14,8 +14,5 @@ module.exports = {
 
     // Handle CSS imports (without CSS modules)
     '\\.(css|less)$': '<rootDir>/src/tests/mocks/fileMock.css',
-
-    // Handle Leaflet maps
-    'react-leaflet': '<rootDir>/src/tests/mocks/reactLeafletMock.js',
   },
 };

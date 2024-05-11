@@ -34,21 +34,25 @@ const Header = () => {
               </a>
             </IconContext.Provider>
             <ul className='nav ms-3 mb-md-0'>
-              <li className=''>
-                <NavLink to='/'>
-                  <button type='button' className='btn btn-primary'>
-                    Home
-                  </button>
-                </NavLink>
-              </li>
               {currentUser && (
-                <li>
-                  <NavLink to='/products'>
-                    <button type='button' className='btn btn-primary'>
-                      Products
-                    </button>
-                  </NavLink>
-                </li>
+                <>
+                  {currentUser.role == 'USER' ? (
+                    <li className=''>
+                      <NavLink to='/'>
+                        <button type='button' className='btn btn-primary'>
+                          Home
+                        </button>
+                      </NavLink>
+                    </li>
+                  ) : null}
+                  <li>
+                    <NavLink to='/products'>
+                      <button type='button' className='btn btn-primary'>
+                        Products
+                      </button>
+                    </NavLink>
+                  </li>
+                </>
               )}
             </ul>
           </div>

@@ -30,7 +30,7 @@ const AddProduct = () => {
       try {
         const res = await addProduct(product);
         console.log('Product added successfully', res);
-        navigate('/');
+        navigate('/products');
       } catch (error) {
         console.log('Error adding product', error);
         setError('Error adding product');

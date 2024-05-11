@@ -14,7 +14,7 @@ const AdminRouter = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<AdminHome />} />
+        <Route path='/products' element={<AdminHome />} />
         <Route path='/addProduct' element={<AddProduct />} />
         <Route path='/editProduct/:pid' element={<EditProduct />} />
         <Route path='/profile' element={<Profile />} />

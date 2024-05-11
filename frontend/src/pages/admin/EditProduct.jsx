@@ -45,13 +45,13 @@ const EditProduct = () => {
       stock,
     };
     await updateProduct(product);
-    navigate('/');
+    navigate('/products');
   };
 
   const handleDelete = async () => {
     console.log('deleting product');
     await deleteProduct(productId);
-    navigate('/');
+    navigate('/products');
   };
 
   return (

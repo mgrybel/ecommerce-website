@@ -18,6 +18,7 @@ const CustomerRouter = () => {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/products' element={<Home />} />
         <Route path='/product/:pid' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart />} />
         <Route path='/checkout' element={<Checkout />} />

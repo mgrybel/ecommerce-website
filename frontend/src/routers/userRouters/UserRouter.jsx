@@ -7,14 +7,16 @@ import CustomerRouter from './CustomerRouter';
 import AdminRouter from './AdminRouter';
 
 const UserRouter = () => {
-  const { currentUser } = useContext(AuthContext);
-  const localStorageUser = getUserDetails();
+  // const { currentUser } = useContext(AuthContext);
+  // const localStorageUser = getUserDetails();
 
-  const user = currentUser || localStorageUser;
+  // const user = currentUser || localStorageUser;
+
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <ProtectedRoute>
-      {user?.role == 'ADMIN' ? <AdminRouter /> : <CustomerRouter />}
+      {currentUser.role == 'ADMIN' ? <AdminRouter /> : <CustomerRouter />}
     </ProtectedRoute>
   );
 };

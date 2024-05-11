@@ -32,7 +32,7 @@ const Login = () => {
       const res = await logIn({ email, password });
       saveUserDetails(res);
       setCurrentUser(res);
-      navigate('/');
+      navigate('/products');
     } catch (error) {
       setErrMsg('Invalid email or password');
     }

@@ -59,7 +59,20 @@ public class SecurityConfig {
         http
             .csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(requests -> requests
-                .anyRequest().permitAll());
+                //.anyRequest().permitAll());
+                .requestMatchers("/v1/auth/**").permitAll()
+                .requestMatchers(HttpMethod.GET, "/v1/products/**").permitAll()
+                .requestMatchers(HttpMethod.POST, "/v1/products/**").hasAnyAuthority(UserRole.ADMIN.name())
+                .requestMatchers(HttpMethod.PUT, "/v1/products/**").hasAnyAuthority(UserRole.ADMIN.name())
+                .requestMatchers(HttpMethod.DELETE, "/v1/products/**").hasAnyAuthority(UserRole.ADMIN.name())
+                .requestMatchers("/v1/product/**").authenticated()
+                .requestMatchers("/v1/user/**", "/v1/users/**").authenticated()
+                .requestMatchers("/v1/cart/**").authenticated()
+                .requestMatchers("/v1/order/**", "/v1/orders/**").authenticated())
+            .sessionManagement(manager -> manager
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .authenticationProvider(authenticationProvider())
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);;
                 return http.build();
     }
 

@@ -3,12 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
 import { createOrder } from '@/utilities/api/OrderAPIHandlers';
-import { getCart } from '@/utilities/api/CartAPIHandlers';
+import { clearCart, getCart } from '@/utilities/api/CartAPIHandlers';
 import ProductItem from '@/components/ProductItem';
 
 const Checkout = () => {
   const [cart, setCart] = useState([]);
   const [error, setError] = useState(null);
+  const [change, setChange] = useState(false);
+
+  const updateCart = () => {
+    setChange(!change);
+  };
 
   const navigate = useNavigate();
 
@@ -48,8 +53,15 @@ const Checkout = () => {
 
     console.log(orderInfo);
     try {
+      // create order
       const order = await createOrder(orderInfo);
       console.log('order created: ', order);
+
+      // clear cart
+      await clearCart();
+      updateCart();
+
+      // navigate to the orders list
       navigate('/order/' + order.id);
     } catch (error) {
       console.log('Error creating order', error);

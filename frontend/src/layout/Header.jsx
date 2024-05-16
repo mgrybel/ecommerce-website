@@ -29,7 +29,7 @@ const Header = () => {
                 size: '40px',
               }}
             >
-              <a href='/' aria-label='Logo'>
+              <a href='/' aria-label='Logo' className='mb-2'>
                 <FaShoppingBag />
               </a>
             </IconContext.Provider>

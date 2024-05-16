@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { MdOutlineShoppingCart } from 'react-icons/md';
-import { FaCartShopping } from 'react-icons/fa6';
+import { FaShoppingBag } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
 import { AuthContext } from '@/contexts/AuthContext';
@@ -30,7 +30,7 @@ const Header = () => {
               }}
             >
               <a href='/' aria-label='Logo'>
-                <FaCartShopping />
+                <FaShoppingBag />
               </a>
             </IconContext.Provider>
             <ul className='nav ms-3 mb-md-0'>

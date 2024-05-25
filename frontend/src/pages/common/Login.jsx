@@ -58,6 +58,7 @@ const Login = () => {
                     <input
                       type='email'
                       id='email'
+                      data-testid='email'
                       name='email'
                       className='form-control-plaintext'
                       value={email}
@@ -73,6 +74,7 @@ const Login = () => {
                     <input
                       type='password'
                       id='password'
+                      data-testid='password'
                       name='password'
                       className='form-control-plaintext'
                       value={password}

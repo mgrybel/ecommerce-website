@@ -88,6 +88,7 @@ const Register = () => {
                     <input
                       type='text'
                       id='name'
+                      data-testid='name'
                       name='name'
                       className='form-control-plaintext'
                       value={name}
@@ -103,6 +104,7 @@ const Register = () => {
                     <input
                       type='email'
                       id='email'
+                      data-testid='email'
                       name='email'
                       className='form-control-plaintext'
                       value={email}
@@ -118,6 +120,7 @@ const Register = () => {
                     <input
                       type='password'
                       id='password'
+                      data-testid='password'
                       name='password'
                       className='form-control-plaintext'
                       value={password}
@@ -136,6 +139,7 @@ const Register = () => {
                     <input
                       type='password'
                       id='confirmPassword'
+                      data-testid='confirmPassword'
                       name='confirmPassword'
                       className='form-control-plaintext'
                       value={confirmPassword}

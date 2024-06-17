@@ -38,7 +38,7 @@ mvn compile
 
 #### Install and start PostgreSQL
 
-This process will be different depending on your operating system, so please check the documentation on how to set up and start PostgreSQL on your operating system.
+This process will be different depending on your operating system, so please check the documentation on how to set up and start **PostgreSQL** on your operating system.
 
 You will find more information [here](https://www.postgresql.org/download/).
 

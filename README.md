@@ -13,7 +13,7 @@ This is an e-commerce website built using **Spring Boot 3**, **React 18**, and *
 - [Running the application](#run-the-application)
 - [Copyright and License](#copyright-and-license)
 
-### Prerequisites
+## Prerequisites
 
 Install the following prerequisites:
 
@@ -25,9 +25,9 @@ Install the following prerequisites:
 - [Language Support for Java(TM) by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java)
 - [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)
 
-### Installation
+## Installation
 
-#### Backend
+### Backend
 
 From the **root** directory, run:
 
@@ -39,13 +39,13 @@ cd backend
 mvn compile
 ```
 
-#### Install and start PostgreSQL
+### Install and start PostgreSQL
 
 This process will be different depending on your operating system, so please check the documentation on how to set up and start **PostgreSQL** on your operating system.
 
 You will find more information [here](https://www.postgresql.org/download/).
 
-#### Set up a PostgreSQL database
+### Set up a PostgreSQL database
 
 With **PostgreSQL** up and running, in a new Terminal window, run:
 
@@ -71,7 +71,7 @@ To quit **psql**, run:
 \q
 ```
 
-#### Frontend
+### Frontend
 
 From the **root** directory, run:
 
@@ -83,11 +83,11 @@ cd frontend
 npm install
 ```
 
-### Run the application
+## Run the application
 
 To run the application, you need to have both the backend and the frontend up and running.
 
-#### 1. Run backend
+### 1. Run backend
 
 From the **backend** directory, run:
 
@@ -95,7 +95,7 @@ From the **backend** directory, run:
 ./mvnw spring-boot:run
 ```
 
-#### 2. Run frontend
+### 2. Run frontend
 
 From the **frontend** directory, run:
 
@@ -103,10 +103,10 @@ From the **frontend** directory, run:
 npm run dev
 ```
 
-#### 3. View the application
+### 3. View the application
 
 Go to http://localhost:3000/ to view the application.
 
-### Copyright and License
+## Copyright and License
 
 Copyright © 2024 mgrybel. Code released under the MIT license.
